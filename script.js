@@ -89,25 +89,10 @@ function addActive (x){
 let contatore = 0 ;
 
 
-function picAfter (){
-  //quando ci clicco voglio che l'immagine attiva non lo sia più
-  removeActive(contatore);
-  //aumento il contatore di 1 
-  contatore += 1;
-  addActive(contatore);
-  //voglio rendere attiva l'immagine con il nuovo contatore
-}
+//creo la funzione per cambiare immagine in su
 
-arrowUp.addEventListener("click", function(){
-  removeActive(contatore);
-  if(contatore == 0){
-    contatore = 4;
-  }else{
-    contatore -= 1;
-  }
-  addActive (contatore);
-});
-arrowDown.addEventListener("click", function(){
+function picAfter (){
+  
   removeActive(contatore);
   if(contatore == 4){
     contatore = 0;
@@ -115,5 +100,21 @@ arrowDown.addEventListener("click", function(){
     contatore += 1;
   }
   addActive (contatore);
-});
+  
+}
+
+function picBefore (){
+  
+  removeActive(contatore);
+  if(contatore == 0){
+    contatore = 4;
+  }else{
+    contatore -= 1;
+  }
+  addActive (contatore);
+  
+}
+
+arrowUp.addEventListener("click", picBefore);
+arrowDown.addEventListener("click", picAfter);
 console.log(bigImmagine);
