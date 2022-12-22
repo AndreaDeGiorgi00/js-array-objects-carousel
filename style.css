@@ -1,0 +1,62 @@
+.contenitore{
+    width: 90%;
+    margin: 100px auto;
+    height: 500px;
+}
+
+.immagine{
+    width: 80%;
+    height: 100%;
+    background-color: aqua;
+    overflow: hidden;
+    position: relative;
+}
+.carosello{
+    width: 20%;
+    background-color: blue;
+    height: 100%;
+    position: relative;
+}
+img{
+    max-width: 100%;
+}
+.immagine img{
+    display: none;
+}
+.immagine .active{
+    display: block;
+}
+.testo{
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    color: white;
+    display: none;
+}
+
+i{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.carosello img{
+    max-height: calc(100% / 5);
+}
+
+
+#prec{
+    position:absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%);
+}
+
+
+#next{
+    position:absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+}
