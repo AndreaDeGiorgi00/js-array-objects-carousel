@@ -1,12 +1,13 @@
 .contenitore{
     width: 90%;
     margin: 100px auto;
-    height: 500px;
+    height: 450px;
 }
 
 .immagine{
     width: 80%;
     height: 100%;
+    object-fit: cover;
     background-color: aqua;
     overflow: hidden;
     position: relative;
@@ -18,7 +19,8 @@
     position: relative;
 }
 img{
-    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .immagine img{
     display: none;

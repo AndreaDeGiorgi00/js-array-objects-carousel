@@ -47,9 +47,10 @@ for(let i = 0 ; i < data.length ; i++){
   if(i != 0){
     messaggio ="";
   }
+  
 
   bigImmagine.innerHTML += `
-  <img id="${i}"src="${url}" alt="immagine" class="${messaggio}"  >
+  <img id="${i}"src="${url}" alt="immagine" class="${messaggio} ${i}"  >
   <div class="testo ${messaggio}" id="${i} testo">
     <h4>${titolo}</h4>
     <p>${text}</p>
@@ -98,6 +99,7 @@ function picAfter (){
     contatore = 0;
   }else{
     contatore += 1;
+    console.log(contatore)
   }
   addActive (contatore);
   
@@ -114,7 +116,29 @@ function picBefore (){
   addActive (contatore);
   
 }
+//voglio creare una funzione che mi dia come return l'indice da attivare e mi faccia cambiare il contatore
 
+
+
+//voglio creare una funzione che cliccando sulla immagine mi stampi in console il suo index
+function selectIndex (){
+  let variabile = this.id ;
+  variabile = [...variabile];
+  let index = parseInt(variabile[3]);
+  //rimuovo la classe active 
+  removeActive(contatore);
+  contatore = index;
+  addActive(contatore) ;
+  console.log(contatore)
+
+}
 arrowUp.addEventListener("click", picBefore);
 arrowDown.addEventListener("click", picAfter);
-console.log(bigImmagine);
+
+const spiderman = document.getElementById("th 0");
+
+for (i=0 ; i < 5 ; i++ ){
+  let selettore = document.getElementById(`th ${i}`)
+  selettore.addEventListener("click", selectIndex);
+}
+
